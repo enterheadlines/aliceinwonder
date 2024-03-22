@@ -1,0 +1,39 @@
+@import './../variables';
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: calc(1vw + 3rem);
+  padding: 20px 20px;
+
+  //a {
+  //  display: inline-block;
+  //  text-decoration: none;
+  //  margin: 20px 0;
+  //}
+
+  .header {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+
+    h1 {
+      display: inline-block;
+      font-weight: 700;
+      font-size: calc(1vw + 1rem);
+      color: $snow;
+      margin: 0;
+    }
+
+    svg {
+      fill: $snow;
+      margin-left: 16px;
+      width: calc(1vw + 1rem);
+      height: calc(1vw + 1rem);
+    }
+  }
+}

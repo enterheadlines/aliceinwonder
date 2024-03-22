@@ -1,0 +1,134 @@
+@import './../variables';
+
+.container {
+  //height: calc(1vw + 3rem);
+  padding: 16px;
+  margin-bottom: 20px;
+
+  li {
+    list-style-type: none;
+  }
+
+  .labels {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    
+    @media (max-width: 800px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    padding: 0;
+    margin: 0;
+
+    .label {
+      flex-basis: 25%;
+
+      display: flex;
+
+      color: $silver-lake-blue;
+      font-weight: 500;
+      font-size: calc(1vw + 0.4rem);
+      padding: 10px;
+
+      @media (max-width: 730px) {
+        font-size: calc(1vw + 0.8rem);
+      }
+
+      @media (max-width: 1060px) {
+        font-size: calc(1vw + 0.8rem);
+      }
+
+      .typeLabel {
+        display: inline-block;
+        margin: 0;
+      }
+
+      .activeTypeBlock {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        svg {
+          fill: $snow;
+          margin-left: 10px;
+          width: calc(1vw + 1rem);
+          height: calc(1vw + 1rem);
+
+          cursor: pointer;
+        }
+
+        .activeTypeLabel {
+          cursor: pointer;
+          text-decoration: underline dotted $oxford-blue;
+          text-decoration-thickness: 2px;
+          text-underline-offset: 8px;
+          color: $snow;
+          display: inline-block;
+          margin: 0;
+        }
+      }
+
+      .block {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        flex-basis: 65%;
+
+        @media (max-width: 800px) {
+          flex-basis: 100%;
+        }
+
+        .list {
+          position: absolute;
+          z-index: 1000;
+          top: calc(1vw + 1rem);
+
+          overflow-y: auto;
+          max-height: calc(5 * (1.5 * (1vw + 0.4rem)) + 16px);
+
+          background-color: $oxford-blue;
+          border-radius: $light-border-radius;
+          box-shadow: $box-shadow;
+
+          margin-top: 16px;
+          padding: 8px 10px;
+
+          &::-webkit-scrollbar {
+            width: 10px;
+          }
+
+          &::-webkit-scrollbar-track {
+            background-color: $oxford-blue;
+            border-radius: 0 $light-border-radius $light-border-radius 0;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            border: 7px solid transparent;
+            background: $silver-lake-blue;
+            border-radius: $light-border-radius;
+          }
+
+          .listItem {
+            cursor: pointer;
+            word-break: keep-all;
+            font-weight: 300;
+            line-height: 1.5;
+            color: $silver-lake-blue;
+            padding: 2px;
+            transition: color $fast-transition-dur ease-out;
+
+            &:hover {
+              color: $platinum;
+            }
+
+          }
+        }
+
+      }
+
+    }
+
+  }
+}
